@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creepy Fortune Cookie</title>
+    <style>
+        /* General Styling */
+        body {
+            background-color: #0d0d0d;
+            color: #d4d4d4;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            color: #bb86fc;
+            margin-bottom: 10px;
+        }
+        #cookie-container {
+            position: relative;
+        }
+        #fortune-cookie {
+            cursor: pointer;
+            width: 200px;
+            transition: transform 0.2s ease;
+        }
+        #fortune-cookie:hover {
+            transform: scale(1.1);
+        }
+        #fortune-text {
+            display: none;
+            font-size: 1.2em;
+            color: #e63946;
+            margin-top: 20px;
+            max-width: 400px;
+            text-shadow: 1px 1px 2px black;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="cookie-container">
+        <h1>Click the Fortune Cookie... if you dare!</h1>
+        <img id="fortune-cookie" src="fortune_cookie.png" alt="Fortune Cookie">
+        <p id="fortune-text"></p>
+    </div>
+
+    <script>
+        // List of creepy fortunes
+        const fortunes = [
+            "You will dream of teeth tonight. Falling out, one by one.",
+            "A shadow lingers over your shoulder. It likes what it sees.",
+            "Someone is watching you... but don't look now.",
+            "Tonight, you’ll feel a cold hand, but you’ll be alone.",
+            "A forgotten memory will resurface. And it won’t be pleasant.",
+            "A clock ticks. Somewhere. But there's no clock nearby.",
+            "You’ll hear whispers when you close your eyes. They’re not friendly.",
+            "You’ll see something out of the corner of your eye. Just pretend it’s not there.",
+            "Someone is waiting for you. And they’re not happy.",
+            "A decision you regret will haunt you soon.",
+            "If you hear footsteps tonight, don’t turn around.",
+            "The air will feel colder tonight, but no one else will notice.",
+            "You’ll hear someone calling your name. Don’t respond.",
+            "A secret will come to light. And it won’t be in your favor.",
+            "A warning you ignored will resurface.",
+            "The next stranger you meet will know more about you than they should.",
+            "A mirror will show you something unexpected soon.",
+            "You’ll find something missing tomorrow. You won’t get it back.",
+            "Your worst fear will feel closer tonight.",
+            "Be careful what you wish for. Someone is listening.",
+            "A door will open that should have stayed shut.",
+            "Someone is thinking about you... in a way they shouldn’t.",
+            "You’ll wake up and feel like you’re not alone.",
+            "The next sound you hear won’t be pleasant.",
+            "If you see a cat tonight, don’t look it in the eyes.",
+            "Something lost will find its way back to you.",
+            "Someone’s been waiting a long time for you to notice them.",
+            "A familiar face will feel unfamiliar soon.",
+            "If you feel a tap on your shoulder, don’t turn around.",
+            "A forgotten fear will resurface.",
+            "Don’t go to sleep without checking under the bed.",
+            "A shadow will pass over you, unnoticed.",
+            "Something will knock, and it won’t need an answer.",
+            "If the lights flicker, don’t worry. It’s already too late.",
+            "Tonight, someone dreams of you... but it’s not pleasant.",
+            "Something will follow you, unseen but not unfelt.",
+            "You’ll hear laughter in the silence. Don’t laugh back.",
+            "The next photograph you see will have something extra in it.",
+            "You’ll feel a cold breeze inside, from nowhere.",
+            "If you hear scratching, it’s best not to investigate.",
+            "A chill will run down your spine, unprovoked.",
+            "The next door you open won’t feel quite right.",
+            "A light will flicker as you pass by.",
+            "Your reflection might do something... unexpected.",
+            "The next person who calls you will know more than you think.",
+            "Someone is closer than you think.",
+            "A familiar place will feel strange soon.",
+            "The next time you blink, someone else will too.",
+            "Tonight, a secret will reveal itself.",
+            "A memory you wanted to forget will resurface.",
+            "You’ll feel a presence as you fall asleep.",
+            "If you feel watched, trust your instincts.",
+            "A soft sound will turn into a haunting echo.",
+            "You’ll sense a presence, even if you can’t see it."
+        ];
+
+        // Function to show a random fortune
+        function showFortune() {
+            const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+            const fortuneText = document.getElementById('fortune-text');
+            fortuneText.innerText = randomFortune;
+            fortuneText.style.display = 'block';
+        }
+
+        // Add event listener to the fortune cookie image
+        document.getElementById('fortune-cookie').addEventListener('click', showFortune);
+    </script>
+
+</body>
+</html>
+
